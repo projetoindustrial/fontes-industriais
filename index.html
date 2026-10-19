@@ -26,6 +26,7 @@ h1{font-size:clamp(1.5rem,5.5vw,2.1rem);margin:6px 0;color:var(--ac)}
 button,input,select{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:9px 10px}
 #tema{border-radius:999px;font-size:.85rem;cursor:pointer;white-space:nowrap}
 .bar{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px}
+.bar>*{min-width:0;max-width:100%}
 @media(min-width:620px){.bar{grid-template-columns:2fr 1fr 1fr 1fr}}
 #n{color:var(--mut);font-size:.88rem;margin:6px 0 10px}
 .c{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:10px}
@@ -38,6 +39,9 @@ button,input,select{font:inherit;color:var(--tx);background:var(--card);border:1
 #mais{display:block;margin:14px auto;cursor:pointer}
 footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--bd);color:var(--mut);font-size:.85rem}
 </style>
+<!-- Casca compartilhada do Projeto Industrial (menu único em /shell/nav.json) -->
+<link rel="stylesheet" href="/shell/pi-shell.css">
+<script src="/shell/pi-shell.js" defer data-pi-mode="full" data-pi-active="fontes-industriais"></script>
 </head>
 <body>
 <main class="w">
