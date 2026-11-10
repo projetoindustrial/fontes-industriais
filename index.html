@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fontes de dados industriais</title>
+<title>Fontes de dados industriais abertas, com licença resumida | Projeto Industrial</title>
 <meta name="description" content="Catálogo de fontes de dados abertas para a indústria, com a licença de cada uma resumida e busca por tema.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Fontes de dados industriais">
+<meta property="og:title" content="Fontes de dados industriais abertas, com licença resumida | Projeto Industrial">
 <meta property="og:description" content="Catálogo de fontes abertas, com licença resumida e busca por tema.">
 <meta property="og:url" content="https://projetoindustrial.github.io/fontes-industriais/">
 <meta property="og:image" content="https://projetoindustrial.github.io/fontes-industriais/og.png">
@@ -129,6 +129,9 @@ footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--bd);color:var
 
 </style>
 
+<link rel="canonical" href="https://projetoindustrial.github.io/fontes-industriais/">
+<link rel="alternate" type="text/plain" href="https://projetoindustrial.github.io/fontes-industriais/llms.txt" title="llms.txt">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "Fontes de dados industriais", "description": "Catálogo de fontes de dados abertas para a indústria, com licença resumida e busca por tema. 446 fontes de dados abertas em 14 temas; licença aberta identificada em 287, tipo não informado em 142, com restrição em 17.", "url": "https://projetoindustrial.github.io/fontes-industriais/", "inLanguage": "pt-BR", "isAccessibleForFree": true, "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://projetoindustrial.github.io/fontes-industriais/dados/catalogo.csv"}, {"@type": "DataDownload", "encodingFormat": "application/x-ndjson", "contentUrl": "https://projetoindustrial.github.io/fontes-industriais/dados/catalogo.jsonl"}]}</script>
 </head>
 <body>
 <main class="w">
@@ -141,7 +144,7 @@ footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--bd);color:var
 <select id="fk" aria-label="Licença"><option value="">Todas as licenças</option><option value="c">Aberta, licença identificada</option><option value="g">Aberta, tipo não informado</option><option value="r">Aberta com restrição</option></select>
 </div>
 <div id="n" aria-live="polite"></div>
-<div id="lista"></div>
+<div id="lista"><div id="estatico"><h2>446 fontes de dados industriais</h2><p>446 fontes de dados abertas em 14 temas; licença aberta identificada em 287, tipo não informado em 142, com restrição em 17. Sem JavaScript, leia <a href="temas/">os temas</a> ou baixe <a href="dados/catalogo.csv">o CSV</a>.</p></div></div>
 <button id="mais" type="button" hidden>Mostrar mais</button>
 <footer>Catálogo montado a partir de curadoria própria e verificação de fontes; entram só as marcadas como abertas e confirmadas. A licença mostrada é um resumo e pode estar desatualizada: confirme sempre no site da fonte antes de reutilizar. Nomes, descrições e dados pertencem aos seus titulares. Projeto independente, sem vínculo com as organizações citadas.</footer>
 </main>
@@ -162,7 +165,7 @@ function run(){var q=norm($("q").value.trim()),ft=$("ft").value,fy=$("fy").value
 F=D.filter(function(x){return(!ft||x.t===ft)&&(!fy||x.y===fy)&&(!fk||x.k===fk)&&(!q||x._s.indexOf(q)>=0)});
 $("lista").textContent="";shown=0;$("n").textContent=F.length+" de "+D.length+" fontes";more();
 if(!F.length){var d=document.createElement("div");d.className="ds-empty";var t=document.createElement("h3");t.className="ds-empty__title";t.textContent="Nenhuma fonte encontrada";var x=document.createElement("p");x.className="ds-empty__text";x.textContent="Nenhuma fonte bate com a busca e os filtros atuais. Remova um filtro ou busque por outro termo.";var b=document.createElement("button");b.type="button";b.className="ds-empty__action";b.textContent="Limpar filtros";b.addEventListener("click",function(){$("q").value="";$("ft").value="";$("fy").value="";$("fk").value="";run()});d.appendChild(t);d.appendChild(x);d.appendChild(b);$("lista").appendChild(d)}}
-fetch("./data.json").then(function(a){return a.json()}).then(function(d){D=d;D.forEach(function(x){x._s=norm(x.n+" "+x.d+" "+x.t)});opts($("ft"),"t");opts($("fy"),"y");["q","ft","fy","fk"].forEach(function(i){$(i).addEventListener("input",run)});$("mais").addEventListener("click",more);run()}).catch(function(){$("n").textContent="Não foi possível carregar a lista. Tente recarregar a página."});
+fetch("./data.json").then(function(a){return a.json()}).then(function(d){D=d;D.forEach(function(x){x._s=norm(x.n+" "+x.d+" "+x.t)});opts($("ft"),"t");opts($("fy"),"y");var ck={};D.forEach(function(x){ck[x.k]=(ck[x.k]||0)+1});Array.prototype.forEach.call($("fk").options,function(o){if(o.value&&ck[o.value])o.textContent+=" ("+ck[o.value]+")"});["q","ft","fy","fk"].forEach(function(i){$(i).addEventListener("input",run)});$("mais").addEventListener("click",more);run()}).catch(function(){$("n").textContent="Não foi possível carregar a lista. Tente recarregar a página."});
 })();
 </script>
 </body>
