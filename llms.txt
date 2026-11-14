@@ -1,6 +1,6 @@
 # Fontes de dados industriais
 
-> 446 fontes de dados abertas em 14 temas; licença aberta identificada em 287, tipo não informado em 142, com restrição em 17.
+> 446 fontes de dados abertas em 14 temas; licença aberta identificada em 287, acesso aberto com licença não informada em 142, com restrição em 17.
 
 ## Páginas
 - [Temas](https://projetoindustrial.github.io/fontes-industriais/temas/)
