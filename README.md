@@ -8,3 +8,7 @@ Catálogo de fontes abertas de dados para a indústria, com a licença de cada u
 - A licença exibida é um resumo e pode estar desatualizada: confirme sempre na fonte antes de reutilizar.
 - Entram apenas fontes marcadas como abertas e confirmadas na curadoria.
 - Projeto independente, sem vínculo com as organizações citadas.
+
+## Licença
+
+O código deste repositório está sob a licença [MIT](LICENSE). Dados, nomes, textos e marcas de terceiros citados ou reunidos aqui continuam sob as licenças e os direitos de cada fonte e não são cobertos por esta licença.
